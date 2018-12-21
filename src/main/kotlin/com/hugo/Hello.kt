@@ -5,6 +5,9 @@ fun main(args: Array<String>) {
 //    Human().hello();
     var h = Human();
     h.hello();
+    var a : Int = 123;
+
+    println(a);
 
 }
 

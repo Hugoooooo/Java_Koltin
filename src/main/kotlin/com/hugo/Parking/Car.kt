@@ -19,6 +19,11 @@ class Car(var id: String, var enter: LocalDateTime) {
             if(enter.isBefore(value))
                 field = value;
         }
-    fun duration() = Duration.between(enter,leave).toMinutes();
-
+    fun duration() =
+        if(enter.isEqual(leave)){
+         0.toLong();
+    }else {
+        Duration.between(enter, leave).toMinutes();
+    }
 }
+

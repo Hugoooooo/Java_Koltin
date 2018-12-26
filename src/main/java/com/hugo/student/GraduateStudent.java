@@ -1,20 +1,19 @@
 package com.hugo.student;
 
-public class Student {
-    static int pass = 60;
-    String name;
-    int math;
-    int english;
-
-    public Student(String name, int math, int english) {
-        this.name = name;
-        this.math = math;
-        this.english = english;
+public class GraduateStudent extends Student {
+    int thesis;
+    static int pass = 70;
+    public GraduateStudent(String name, int math, int english,int thesis) {
+        super(name, math, english);
+        this.thesis = thesis;
     }
 
+
+    @Override
     public void Print() {
+        System.out.println("GraduateStudent");
         int average = Average();
-        System.out.println(this.name + "\t" + this.math + "\t" + this.english + "\t" + average + "\t");
+        System.out.println(this.name + "\t" + this.math + "\t" + this.english + "\t" +this.thesis + "\t" + average + "\t");
         String group = "F";
         switch (average / 10) {
             case 9:
@@ -41,11 +40,10 @@ public class Student {
         }
     }
 
+
+    @Override
     public int Average() {
-        return (math + english) / 2;
+            return (math + english + thesis) / 3;
     }
 
-    public int HighScore() {
-        return (math > english) ? math : english;
-    }
 }

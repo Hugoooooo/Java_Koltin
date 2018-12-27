@@ -16,20 +16,34 @@ fun main(args: Array<String>) {
     print("Please enter object\'s height:");
     height = scanner.nextFloat();
 
-    val box3 = Box3(23f, 14f, 13f);
-    val box5 = Box5(39.5f, 27.5f, 23f);
-    println(if (box3.validate(length, width, height)) "Box3 可以容納" else "Box3 不可容納")
-    println(if (box5.validate(length, width, height)) "Box5 可以容納" else "Box5 不可容納")
+    println(if (Box3().validate(length, width, height)) "Box3 可以容納" else "Box3 不可容納")
+    println(if (Box5().validate(length, width, height)) "Box5 可以容納" else "Box5 不可容納")
 }
 
-open class BoxModel(var length: Float, var width: Float, var height: Float) {
+open class BoxModel() {
+    var length: Float = 0.0f;
+    var width: Float = 0.0f;
+    var height: Float = 0.0f;
+
     fun validate(inputLength: Float, inputWidth: Float, inputHeight: Float): Boolean =
         if (inputLength > this.length || inputWidth > this.width || inputHeight > this.height) false else true;
 }
 
 
-class Box3(length: Float, width: Float, height: Float) : BoxModel(length, width, height) {
+class Box3 : BoxModel() {
+    init {
+        length = 23f
+        width = 14f
+        height = 13f
+    }
+
 }
 
-class Box5(length: Float, width: Float, height: Float) : BoxModel(length, width, height) {
+class Box5 : BoxModel() {
+    init {
+        length = 39.5f
+        width = 27.5f
+        height = 23f
+    }
 }
+

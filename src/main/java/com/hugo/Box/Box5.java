@@ -1,22 +1,10 @@
 package com.hugo.Box;
 
 public class Box5 extends BoxModel {
-//    float maxLength;
-//    float maxWidth;
-//    float maxHeight;
-
-    public Box5(float length, float width, float height) {
-        super(length, width, height);
-//        maxLength = length;
-//        maxWidth = width;
-//        maxHeight = height;
+    //        Box5: 長39.5，寬27.5，高23 (cm)
+    public Box5() {
+        length = 39.5f;
+        width = 27.5f;
+        height = 23f;
     }
-
-//    @Override
-//    public boolean validate(float length, float width, float height) {
-//        if (length > this.maxLength || width > this.maxWidth || height > this.maxHeight)
-//            return false;
-//        else
-//            return true;
-//    }
 }
